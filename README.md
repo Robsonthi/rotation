@@ -19,7 +19,7 @@ $$P=\begin{bmatrix}
 p_x & p_y & p_z & 1 \\
 \end{bmatrix}^T$$
 
-Why size 4? Because a point with direction is represented such as a matrix 4x4:
+Why size 4? Because a point with direction is represented such as a matrix 4x4 (homogeneous matrix):
 
 $$P=\begin{bmatrix}
 n_x & o_x & a_x & p_x \\
