@@ -13,13 +13,13 @@ Choose the point_inicial, point_ref, vector_ref, k_points, theta_end and rotatio
 ![Figure_z](https://github.com/user-attachments/assets/239129e1-1849-4e2a-af9b-e3d130d7e428) ![Figure_custom](https://github.com/user-attachments/assets/49e4e3aa-5261-46b1-a9ac-0ec562d60293)
 
 ## Rotation
-The points in the space might be represented such as a vector size 4:
+The points in the space might be represented as a vector of size 4:
 
 $$P=\begin{bmatrix}
 p_x & p_y & p_z & 1 \\
 \end{bmatrix}^T$$
 
-Why size 4? Because a point with direction is represented such as a matrix 4x4 (homogeneous matrix):
+Why size 4? Because a point with direction is represented as a matrix 4x4 (homogeneous matrix):
 
 $$P=\begin{bmatrix}
 n_x & o_x & a_x & p_x \\
@@ -57,7 +57,7 @@ sin(\Theta) & cos(\Theta) & 0 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
-If you want to rotate a point around an arbitrary axis? If you know the point $$(a,b,c)$$ and direction of an axis $$(u,v,w)$$, you can rotate your point, using this matrix:
+What if you wanted to rotate a point around an arbitrary axis? If you know the point $$(a,b,c)$$ and direction of an axis $$(u,v,w)$$, you can rotate your point, using this matrix:
 
 To custom-axis, we have $$P_{new}=R_\alpha(\Theta,a,b,c,u,v,w) \cdot P_{old}$$
 
