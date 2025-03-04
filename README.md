@@ -28,43 +28,43 @@ n_z & o_z & a_z & p_z \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
-To rotate a point around an axis, X, Y or Z, it’s simple, just perceive a matrix multiplication $$R(\Theta) \cdot P$$.
+To rotate a point around an axis, X, Y or Z, it’s simple, just perceive a matrix multiplication $$R(\theta) \cdot P$$.
 
-To x-axis, we have $$P_{new}=R_x(\Theta) \cdot P_{old}$$
+To x-axis, we have $$P_{new}=R_x(\theta) \cdot P_{old}$$
 
-$$R_x(\Theta)=\begin{bmatrix}
+$$R_x(\theta)=\begin{bmatrix}
 1 & 0 & 0 & 0 \\
-0 & cos(\Theta) & -sin(\Theta) & 0 \\
-0 & sin(\Theta) & cos(\Theta) & 0 \\
+0 & cos(\theta) & -sin(\theta) & 0 \\
+0 & sin(\theta) & cos(\theta) & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
-To y-axis, we have $$P_{new}=R_y(\Theta) \cdot P_{old}$$
+To y-axis, we have $$P_{new}=R_y(\theta) \cdot P_{old}$$
 
-$$R_y(\Theta)=\begin{bmatrix}
-cos(\Theta) & 0 & sin(\Theta) & 0 \\
+$$R_y(\theta)=\begin{bmatrix}
+cos(\theta) & 0 & sin(\theta) & 0 \\
 0 & 1 & 0 & 0 \\
--sin(\Theta) & 0 & cos(\Theta) & 0 \\
+-sin(\theta) & 0 & cos(\theta) & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
-To z-axis, we have $$P_{new}=R_z(\Theta) \cdot P_{old}$$
+To z-axis, we have $$P_{new}=R_z(\theta) \cdot P_{old}$$
 
-$$R_z(\Theta)=\begin{bmatrix}
-cos(\Theta) & -sin(\Theta) & 0 & 0 \\
-sin(\Theta) & cos(\Theta) & 0 & 0 \\
+$$R_z(\theta)=\begin{bmatrix}
+cos(\theta) & -sin(\theta) & 0 & 0 \\
+sin(\theta) & cos(\theta) & 0 & 0 \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
 What if you wanted to rotate a point around an arbitrary axis? If you know the point $$(a,b,c)$$ and direction of an axis $$(u,v,w)$$, you can rotate your point, using this matrix:
 
-To custom-axis, we have $$P_{new}=R_\alpha(\Theta,a,b,c,u,v,w) \cdot P_{old}$$
+To custom-axis, we have $$P_{new}=R_\alpha(\theta,a,b,c,u,v,w) \cdot P_{old}$$
 
-$$R_\alpha(\Theta,a,b,c,u,v,w)=\begin{bmatrix}
-u^2+(v^2+w^2)cos\Theta & uv(1-cos\Theta)-wsin\Theta & uw(1-cos\Theta)+vcos\Theta & (a(v^2+w^2)-u(bv+cw))(1-cos\Theta)+(bw-cv)sin\Theta \\
-uv(1-cos\Theta)+wsin\Theta & v^2+(u^2+w^2)cos\Theta & vw(1-cos\Theta)-usin\Theta & (b(u^2+w^2)-v(au+cw))(1-cos\Theta)+(cu-aw)sin\Theta \\
-uw(1-cos\Theta)-vsin\Theta & vw(1-cos\Theta)+usin\Theta & w^2+(u^2+v^2)cos\Theta & (c(u^2+v^2)-w(au+bv))(1-cos\Theta)+(av-bu)sin\Theta \\
+$$R_\alpha(\theta,a,b,c,u,v,w)=\begin{bmatrix}
+u^2+(v^2+w^2)cos\theta & uv(1-cos\theta)-wsin\theta & uw(1-cos\theta)+vcos\theta & (a(v^2+w^2)-u(bv+cw))(1-cos\theta)+(bw-cv)sin\theta \\
+uv(1-cos\theta)+wsin\theta & v^2+(u^2+w^2)cos\theta & vw(1-cos\theta)-usin\theta & (b(u^2+w^2)-v(au+cw))(1-cos\theta)+(cu-aw)sin\theta \\
+uw(1-cos\theta)-vsin\theta & vw(1-cos\theta)+usin\theta & w^2+(u^2+v^2)cos\theta & (c(u^2+v^2)-w(au+bv))(1-cos\theta)+(av-bu)sin\theta \\
 0 & 0 & 0 & 1
 \end{bmatrix}$$
 
