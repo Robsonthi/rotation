@@ -80,17 +80,20 @@ if __name__ == '__main__':
                                    rotation_type=rotation_type)
     
     #Plotting
+    csfont = {'fontname':'Courier New'}
     fig = plt.figure(figsize=(12, 12))
     ax = fig.add_subplot(projection='3d')
-    plt.title(f'Rotation using the {rotation_type}-axis')
+    fig.set_facecolor('#c8e1f5ff')
+    ax.set_facecolor('#c8e1f5ff')
+    plt.title(f'Rotation using the {rotation_type}-axis',fontdict=csfont,fontsize=20)
     ax.quiver(0, 0, 0, 1, 0, 0, length=1, normalize=True,color='red')
     ax.quiver(0, 0, 0, 0, 1, 0, length=1, normalize=True,color='green')
     ax.quiver(0, 0, 0, 0, 0, 1, length=1, normalize=True,color='blue')
     if rotation_type=='custom':
         ax.quiver(*point_ref, *vector_ref, length=1, normalize=True, color='orange')
-    ax.set_xlabel('X-axis')
-    ax.set_ylabel('Y-axis')
-    ax.set_zlabel('Z-axis')
+    ax.set_xlabel('X-axis',fontdict=csfont,fontsize=16)
+    ax.set_ylabel('Y-axis',fontdict=csfont,fontsize=16)
+    ax.set_zlabel('Z-axis',fontdict=csfont,fontsize=16)
     ax.set_xlim(-5,5)
     ax.set_ylim(-5,5)
     ax.set_zlim(-5,5)
